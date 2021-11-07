@@ -7,7 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "concurrently \"npm run snowpack-dev\" \"npm run electron-start\"",
+    "dev": "concurrently \"npm run snowpack-dev\" \"wait-on http://localhost:8080 && npm run electron-start\"",
     "build": "npm run snowpack-build",
     "electron-start": "electron .",
     "electron-prod": "cross-env NODE_ENV=production electron .",
@@ -35,6 +35,7 @@
     "electron": "15.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "snowpack": "^3.8.8"
+    "snowpack": "^3.8.8",
+     "wait-on": "^6.0.0"
   }
 }
